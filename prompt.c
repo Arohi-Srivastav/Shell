@@ -43,10 +43,15 @@ void directory(void)
 			j++;
 		}
 		temp[j]='\0';
-		printf("%s> ",temp);
+		//printf("%s> ",temp);
+		strcat(ar,temp);
 	}
 	else
-		printf("%s> ",dir);
+	{
+	strcat(ar,dir);
+	}
+	strcat(ar,">");
+		//printf("%s> ",dir);
 
 
 }
