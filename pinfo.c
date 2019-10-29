@@ -1,6 +1,7 @@
 #include "header.h"
-void pinfo(char **strings) 
+char pinfo(char **strings) 
 {
+	char kk;
 	char* temp = (char *) calloc(10000, sizeof(char));
 	if (temp==NULL) 
 	{
@@ -52,17 +53,18 @@ void pinfo(char **strings)
 				len++;
 				first = strtok(NULL, delimit);
 			}
-			printf("pid -- %d\n", pid);
+			//printf("pid -- %d\n", pid);
 			for (int i = 0; i < len; i++) 
 			{
 				if (strcmp(tokens[i], "VmSize:") == 0) 
 				{
-					printf("Memory -- %s {Virtual Memory}\n", tokens[i + 1]);
+					//printf("Memory -- %s {Virtual Memory}\n", tokens[i + 1]);
 				}
 				if (strcmp(tokens[i], "State:") == 0) 
 				{
 
-					printf("State -- %s\n", tokens[i + 1]);
+					//printf("State -- %s\n", tokens[i + 1]);
+					kk=tokens[i+1][0];
 				}
 			}
 			char tmp[1000],add[1000];
@@ -71,9 +73,11 @@ void pinfo(char **strings)
 			strcat(tmp,"/exe");
 			length = readlink(tmp,add,1000);
 			add[length] = '\n';	
-			printf("Executable Path -- %s",add);
+			//printf("Executable Path -- %s",add);
 
 
 		}
 	}
+	//printf("%c\n",kk);
+	return kk;
 }
