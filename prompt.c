@@ -1,13 +1,44 @@
 #include "header.h"
 void user(void)
 {
+	//char ar[500];
 	char* user_name;
 	char* system_name;
 	user_name = (char *)malloc(500*sizeof(char));
 	system_name = (char *)malloc(500*sizeof(char));
 	getlogin_r(user_name,500);
 	gethostname(system_name,500);
-	printf("<%s@%s",user_name,system_name);
+	//sprintf(bh,%s,user_name);
+	//sprintf(bh,%s,user_name);
+	strcpy(ar,"<");void user(void)
+3
+{
+4
+        char* user_name;
+5
+        char* system_name;
+6
+        user_name = (char *)malloc(500*sizeof(char));
+7
+        system_name = (char *)malloc(500*sizeof(char));
+8
+        getlogin_r(user_name,500);
+9
+        gethostname(system_name,500);
+10
+        printf("<%s@%s",user_name,system_name);
+11
+        directory();
+12
+}
+	strcat(ar,user_name);
+	strcat(ar,"@");
+	strcat(ar,system_name);
+//	char* d=(char*)malloc(500*sizeof(char));
+//	getcwd(d,500);
+	//strcat(ar,d);
+
+	//printf("<%s@%s",user_name,system_name);
 	directory();
 }
 void directory(void)
